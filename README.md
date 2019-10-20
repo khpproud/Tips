@@ -21,3 +21,6 @@ Mockito final class 생성시
 - v2 이상에서 지원은 하지만 default는 deactivated임. 아래와 같이 추가
 1. Create the file org.mockito.plugins.MockMaker in either src/test/resources/mockito-extensions/ or src/mockito-extensions/. 
 2. Add this line to the file: mock-maker-inline. With this modification we now can mock a final class.
+
+- Regex Pattern 참고
+https://regexr.com/ 매우 유용함.
