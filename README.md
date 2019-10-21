@@ -22,5 +22,8 @@ Mockito final class 생성시
 1. Create the file org.mockito.plugins.MockMaker in either src/test/resources/mockito-extensions/ or src/mockito-extensions/. 
 2. Add this line to the file: mock-maker-inline. With this modification we now can mock a final class.
 
-- Regex Pattern 참고
+Regex Pattern 참고
 https://regexr.com/ 매우 유용함.
+
+AndroidX Migrate 시 DataBindingUtil.setContentView(...) 에서 "Cannot infer type ViewDataBinding..." 에러 발생시
+=> File -> Invalidate Caches / Restart 해줌
