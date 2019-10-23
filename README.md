@@ -27,3 +27,6 @@ https://regexr.com/ 매우 유용함.
 
 AndroidX Migrate 시 DataBindingUtil.setContentView(...) 에서 "Cannot infer type ViewDataBinding..." 에러 발생시
 => File -> Invalidate Caches / Restart 해줌
+
+Random Image 
+https://source.unsplash.com/random 활용 specific dimension 은 ?w=... 활용
