@@ -30,3 +30,10 @@ AndroidX Migrate 시 DataBindingUtil.setContentView(...) 에서 "Cannot infer ty
 
 Random Image 
 https://source.unsplash.com/random 활용 specific dimension 은 ?w=... 활용
+
+ViewModel 변경 내용(androidx.lifecycle Version 2.2.0-alpha03)
+- ViewModelProviders.of()을 사용한 ViewModel 객체 획득시 위 버전 부터 deprecated됨
+- 다음과 같이 변경
+1. androidx.fragment-ktx import 하여 => by viewModels<(ViewModel 클래스)> { (factory) } 확장 위임 함수 사용
+2. ViewModelProvider((ViewModelStoreOwner 객체))[(viewModel 클래스::class.java)] 이용
+  => 이 방법 사용시 Fragment 가 아닌 Activity가 Owner로 설정하려면 activity as ViewModelStoreOwner 로 type casting 해줌.
