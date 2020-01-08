@@ -3,7 +3,7 @@ Trivial tips for developing
 
 - Kotlin Dagger 
 
-prb) @MapKey + @IntoMap 을 통한 <key, value> injection 시에 
+prb) @MapKey + @IntoMap 을 통한 멀티바인딩 injection 시에 
 error: [Dagger/MissingBinding] java.util.Map<java.lang.String,? extends (Value type) 에러가 발생
 wildcard를 인식하지 못하는 문제
 
