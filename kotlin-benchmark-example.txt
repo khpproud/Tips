@@ -32,6 +32,27 @@
         }
     }
   }
+  // Configuration 은 gradle에 추가하거나 source에 annotation으로 설정 가능
+  // Create configurations
+    configurations {
+        main { // main configuration is created automatically, but you can change its defaults
+            warmups = 20 // number of warmup iterations
+            iterations = 10 // number of iterations
+            iterationTime = 3 // time in seconds per iteration
+        }  
+    }
+    or
+    @State(Scope.Thread)
+    @BenchmarkMode(Mode.AverageTime)
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    @Fork(value = 2, jvmArgs = ["-Xms4G", "-Xms4G"])
+    @Measurement(iterations = 2)
+    @Warmup(iterations = 3)
+    class BenchmarkTest {
+        @Benchmark
+        fun someTest() { ... }
+    }
+    
   // Or benchmarks 용 sourceSet를 별도로 추가하여 설정
   // Create a custom sourceSet
   sourceSets {
