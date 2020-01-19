@@ -1,0 +1,55 @@
+- kotlinx-benchmark Test Usage
+ * https://github.com/Kotlin/kotlinx-benchmark 참고
+ : 내부적으로 JMH(Java Microbenchmark Harness) 라이브러리를 래핑하는 gradle 설정이 가능함.
+  +  plugin look up
+  buildscript {
+    repositories {
+        …
+        maven { url 'https://dl.bintray.com/kotlin/kotlinx' }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlinx:kotlinx.benchmark.gradle:0.2.0-dev-7"
+    }
+  }
+  apply plugin: 'kotlinx.benchmark'
+  
+  + all-open 설정을 추가하여 Kotlin의 모든 테스트할 클래스 및 메소드를 open으로 만들어줌
+  plugins {
+    id 'org.jetbrains.kotlin.plugin.allopen'
+  }
+  allOpen {
+    annotation("org.openjdk.jmh.annotations.State")
+  }
+  
+  + (Optional) Js 나 Native 는 Runtime Library 추가
+  implementation "org.jetbrains.kotlinx:kotlinx.benchmark.runtime:0.2.0-dev-7"
+  
+  + Configuration 설정
+  benchmark {
+    targets {
+        register("main") {
+            jmhVersion = "1.21"
+        }
+    }
+  }
+  // Or benchmarks 용 sourceSet를 별도로 추가하여 설정
+  // Create a custom sourceSet
+  sourceSets {
+    benchmarks
+  }
+  
+  // Configure benchmark
+  benchmark {
+    // Setup configuration
+    targets {
+        // This one matches sourceSet name above
+        register("benchmarks") {
+            jmhVersion = "1.21"
+        }
+    }
+  }
+  
+* 벤치마크 테스트
+1. build/main(or benchmarks 용 소스셋)/jars/["projectName-sourceSet-jmh-(...).jar"] 파일이 빌드되었는지 확인
+2. IDE or commandline 명령(java -jar ...)으로 run
+3. 결과 확인
