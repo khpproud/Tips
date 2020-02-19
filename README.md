@@ -47,10 +47,13 @@ ViewModel 변경 내용(androidx.lifecycle Version 2.2.0-alpha03)
 2. ViewModelProvider((ViewModelStoreOwner 객체))[(viewModel 클래스::class.java)] 이용
   => 이 방법 사용시 Fragment 가 아닌 Activity가 Owner로 설정하려면 activity as ViewModelStoreOwner 로 type casting 해줌.
   
-- AndroidXTest
+AndroidXTest
 robolectric 사용시 Android resource 사용 추가
 // app/build.gradle
 testOptions.unitTests {
     includeAndroidResources = true
 }
+
+Mockito dexmaker
+1. Mocking final classes& methods: 버전 p 이상 => dexmaker-mockito-inline dependency에 추가
 
