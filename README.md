@@ -1,6 +1,23 @@
 # Tips
 Trivial tips for developing
 
+- AndroidStudio 4.0 Gradle plugin DSL 변경
+
+~~android {~~
+    ~~viewBinding {~~
+        ~~enabled = true~~
+    ~~}
+~~}
+
+
+```
+android {
+    buildFeatures {
+        viewBinding = true
+    }
+}
+```
+
 - Kotlin Dagger 
 
 prb) @MapKey + @IntoMap 을 통한 멀티바인딩 injection 시에 
