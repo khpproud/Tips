@@ -6,8 +6,8 @@ Trivial tips for developing
 ~~android {~~
     ~~viewBinding {~~
         ~~enabled = true~~
-    ~~}
-~~}
+    ~~}~~
+~~}~~
 
 
 ```
