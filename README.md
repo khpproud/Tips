@@ -9,8 +9,10 @@ fun setup() {
     viewModel = SampleViewModel(savedStateHandle)
 }
 ```
-    . savedStateHandle을 mocking 하지 않고 직접 초기화하여 기능 테스트(get/set)
-    . 내부적으로 Map에 값을 저장/회수하기 때문에 테스트에 오버헤드가 크지 않음
+
+1. savedStateHandle을 mocking 하지 않고 직접 초기화하여 기능 테스트(get/set)
+2. 내부적으로 Map에 값을 저장/회수하기 때문에 테스트에 오버헤드가 크지 않음
+3. ref: https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-master-dev/lifecycle/lifecycle-viewmodel-savedstate/src/main/java/androidx/lifecycle/SavedStateHandle.java?source=post_page---------------------------%2F%2F%2F%2F%2F%2F%2F&autodive=0%2F%2F%2F%2F
 
 - AndroidStudio 4.0 Gradle plugin DSL 변경
 
