@@ -1,6 +1,17 @@
 # Tips
 Trivial tips for developing
 
+- SavedStateHandle에 의존하는 ViewModel test 시
+```
+@Before
+fun setup() {
+    val savedStateHandle = SavedStateHandle()
+    viewModel = SampleViewModel(savedStateHandle)
+}
+```
+    . savedStateHandle을 mocking 하지 않고 직접 초기화하여 기능 테스트(get/set)
+    . 내부적으로 Map에 값을 저장/회수하기 때문에 테스트에 오버헤드가 크지 않음
+
 - AndroidStudio 4.0 Gradle plugin DSL 변경
 
 ~~android {~~
