@@ -1,6 +1,13 @@
 # Tips
 Trivial tips for developing
 
+- Animation 테스트시 terminal에서 개발자 설정의 Animation speed 조절하기 (0.5 ~ 10)
+```
+adb shell settings put global window_animation_scale 10
+adb shell settings put global transition_animation_scale 10
+adb shell settings put global animator_duration_scale 10
+```
+
 - SavedStateHandle에 의존하는 ViewModel test 시
 ```
 @Before
