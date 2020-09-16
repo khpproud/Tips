@@ -1,6 +1,14 @@
 # Tips
 Trivial tips for developing
 
+- layout File 내 <merge ...> 태그 사용 후 layout 미리 보기 시
+    ```
+    <merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.LinearLayout"
+    tools:orientation="vertical">
+    ```
+        
 - Animation 테스트시 terminal에서 개발자 설정의 Animation speed 조절하기 (0.5 ~ 10)
 ```
 adb shell settings put global window_animation_scale 10
